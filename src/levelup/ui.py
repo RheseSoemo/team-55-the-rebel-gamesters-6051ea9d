@@ -1,6 +1,7 @@
 import logging
 from typing import Callable
 from levelup.controller import GameController, Direction, InvalidMoveException
+from colorama import Fore
 
 VALID_DIRECTIONS = [x.value for x in Direction]
 
@@ -19,7 +20,7 @@ class GameApp:
         return response
 
     def create_character(self):
-        character = self.prompt("Enter character name", lambda x: len(x) > 0)
+        character = self.prompt(Fore.BLUE + "Enter character name" + Fore.WHITE, lambda x: len(x) > 0)
         self.controller.create_character(character)
 
     def move_loop(self):
