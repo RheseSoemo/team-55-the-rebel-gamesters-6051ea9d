@@ -1,12 +1,10 @@
 import sys
 from levelup.ui import GameApp
-<<<<<<< HEAD
 
 #test
-=======
-#this is a test
 
->>>>>>> 4258045 (test1)
+#this is a test 2
+
 def main() -> None:
     app = GameApp()
     try:
