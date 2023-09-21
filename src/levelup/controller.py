@@ -1,6 +1,7 @@
 import logging
 from dataclasses import dataclass
 from enum import Enum
+from levelup.GameMap import GameMap
 
 
 DEFAULT_CHARACTER_NAME = "Character"
@@ -35,7 +36,8 @@ class GameController:
         self.status = GameStatus()
 
     def start_game(self):
-        pass
+        CurrentMap: GameMap = GameMap(10)
+        print(CurrentMap.MapTiles)
 
     # Pre-implemented to demonstrate ATDD
     # TODO: Update this if it does not match your design (hint - it doesnt)
