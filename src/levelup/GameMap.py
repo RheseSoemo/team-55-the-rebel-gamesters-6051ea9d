@@ -6,8 +6,6 @@ class GameMap:
     BoardWidth = 10
     MapTiles = [[0]*1]*1
 
-    ArrayX = []
-    ArrayY = []
     # define position []
 
     def __init__(self, number):
