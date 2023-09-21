@@ -6,8 +6,6 @@ class GameMap:
     BoardWidth = 10
     MapTiles = [[0]*1]*1
 
-    # define position []
-
     def __init__(self, number):
         self.NumberOfPosition = number
         rows, cols = (self.NumberOfPosition, self.NumberOfPosition)
@@ -24,7 +22,8 @@ class GameMap:
 
 
 
-    # def getPosition()
+    def getPosition(self, x: int, y: int):
+        return self.MapTiles[x][y]
     #def calculatePosition(direction: Direction):
         # to implement method
        # pass
