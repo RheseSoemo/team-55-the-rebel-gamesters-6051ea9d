@@ -52,38 +52,48 @@ class GameController:
 
     def move(self, direction: Direction) -> None:
         CanMove: bool
-        print(direction)
+        NewX: int = self.PositionX
+        NewY: int = self.PositionY
+        FriendlyDirection: str
+        #print(direction)
 
         if direction == Direction.NORTH:
-            if self.CurrentMap.checkPosition(self.PositionX, self.PositionY + 1) == True:
+            NewY += 1
+            FriendlyDirection = "North"
+            if self.CurrentMap.checkPosition(NewX, NewY) == True:
                 #print("can move north")
                 CanMove = True
             else:
                 CanMove = False
                 #print("can't move north")
         elif direction == Direction.SOUTH:
-            if self.CurrentMap.checkPosition(self.PositionX, self.PositionY - 1) == True:
+            NewY += -1
+            FriendlyDirection = "South"
+            if self.CurrentMap.checkPosition(NewX, NewY) == True:
                 CanMove = True
             else:
                 CanMove = False
         elif direction==Direction.EAST:
-            if self.CurrentMap.checkPosition(self.PositionX+1,self.PositionY)== True:
+            NewX += 1
+            FriendlyDirection = "East"
+            if self.CurrentMap.checkPosition(NewX, NewY) == True:
                 CanMove = True
             else:
                 CanMove= False
         elif direction==Direction.WEST:
-            if self.CurrentMap.checkPosition(self.PositionX-1, self.PositionY)==True:
+            NewX += -1
+            FriendlyDirection = "West"
+            if self.CurrentMap.checkPosition(NewX, NewY)==True:
                 CanMove = True
             else:
                 CanMove = False
-
-
-
-
+        
         if CanMove == True:
-            print("player can move that way")
+            self.PositionX = NewX
+            self.PositionY = NewY
+            print("You move", FriendlyDirection, "to map tile X:", self.PositionX, " Y:", self.PositionY)
         else:
-            print("player can't move that way")
+            print("You cannot move", FriendlyDirection, "to map tile X:", NewX, " Y:", NewY)
 
     def set_character_position(self, xycoordinates: tuple) -> None:
         # TODO: IMPLEMENT THIS TO SET CHARACTERS CURRENT POSITION -- exists to be testable
