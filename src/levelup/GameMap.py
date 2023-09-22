@@ -22,17 +22,18 @@ class GameMap:
                 #print(DescriptionNumber)
                 NewPosition: Position = Position(1)
                 if (DescriptionNumber == 0):
-                    NewPosition.Description = "You are standing in a grassy field"
+                    NewPosition.Description = "You are standing in a grassy field singing happy birthday to Indu"
                 elif (DescriptionNumber == 1):
-                    NewPosition.Description = "You are standing in a dark forest"
+                    NewPosition.Description = "You are standing in a dark forest but don't worry, Gilette will share the fire she made with you"
                 elif (DescriptionNumber == 2):
-                    NewPosition.Description = "You are standing in front of a river"
+                    NewPosition.Description = "You are standing in front of a river.  Rhese wants you to kayak with him."
                 elif (DescriptionNumber == 3):
-                    NewPosition.Description = "You are knee deep in a lake"
+                    NewPosition.Description = "You are knee deep in a lake in Minnesota.  Angie tells you to put on bug spray"
                 elif (DescriptionNumber == 4):
-                    NewPosition.Description = "You are standing on a cold mountain"
+                    NewPosition.Description = "You are standing on a cold mountain but its ok because Luisa has a blanket for you"
                 elif (DescriptionNumber == 5):
-                    NewPosition.Description = "You are running in a corn field being chased by bees"
+                    NewPosition.Description = "You are running in a corn field being chased by bees and Joe"
+                
                 #print(NewPosition.Description)
                 self.MapTiles[x][y] = NewPosition
 
