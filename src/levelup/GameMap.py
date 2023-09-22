@@ -3,7 +3,7 @@ from levelup.position import Position
 import array
 
 class GameMap:
-    BoardWidth = 10
+    BoardWidth = 2
     MapTiles = [[0]*1]*1
 
     def __init__(self, number):
@@ -24,6 +24,19 @@ class GameMap:
 
     def getPosition(self, x: int, y: int):
         return self.MapTiles[x][y]
+
+    def checkPosition(self, x: int, y: int):
+        ReturnState: bool = True
+        print(x, "|", y)
+        if not self.BoardWidth > x or -1 < x:
+            ReturnState = False
+
+        if not self.BoardWidth > y or -1 < y:
+            ReturnState = False
+
+        return ReturnState
+
+
     #def calculatePosition(direction: Direction):
         # to implement method
        # pass
