@@ -43,6 +43,11 @@ class GameApp:
     def start(self):
         self.create_character()
         self.controller.start_game()
+
+        print("You start at map tile X:", self.controller.PositionX+1, "Y:", self.controller.PositionY+1)
+        print(self.controller.CurrentMap.getDescription(self.controller.PositionX, self.controller.PositionY))
+
+        self.controller.PositionX
         self.move_loop()
 
     def quit(self):

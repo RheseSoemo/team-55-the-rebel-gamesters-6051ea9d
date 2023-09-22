@@ -2,6 +2,7 @@ import logging
 from dataclasses import dataclass
 from enum import Enum
 from levelup.GameMap import GameMap
+from random import randrange
 
 
 DEFAULT_CHARACTER_NAME = "Character"
@@ -32,8 +33,8 @@ class GameController:
 
     status: GameStatus
     CurrentMap: GameMap
-    PositionX: int = 0
-    PositionY: int = 0
+    PositionX: int = randrange(10)
+    PositionY: int = randrange(10)
     MoveCount: int = 0
 
     def __init__(self):
