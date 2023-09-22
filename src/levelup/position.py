@@ -1,6 +1,11 @@
 class Position:
-    Description = ""
+    Description: str = ""
     
 
     def __init__(self, incomeDesc):
-        self.Description = incomeDesc 
+        #print(incomeDesc)
+        self.Description = incomeDesc
+        #print(self.Description)
+
+    def getDescription(self):
+        return self.Description

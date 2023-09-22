@@ -1,5 +1,6 @@
 #from levelup.controller import Direction
 from levelup.position import Position
+from random import randrange
 import array
 
 class GameMap:
@@ -17,10 +18,27 @@ class GameMap:
         for x in range (0, self.BoardWidth):
             for y in range (0, self.BoardWidth):
                 #print(x, " ", y)
+                DescriptionNumber: int = randrange(6)
+                #print(DescriptionNumber)
                 NewPosition: Position = Position(1)
+                if (DescriptionNumber == 0):
+                    NewPosition.Description = "You are standing in a grassy field"
+                elif (DescriptionNumber == 1):
+                    NewPosition.Description = "You are standing in a dark forest"
+                elif (DescriptionNumber == 2):
+                    NewPosition.Description = "You are standing in front of a river"
+                elif (DescriptionNumber == 3):
+                    NewPosition.Description = "You are knee deep in a lake"
+                elif (DescriptionNumber == 4):
+                    NewPosition.Description = "You are standing on a cold mountain"
+                elif (DescriptionNumber == 5):
+                    NewPosition.Description = "You are running in a corn field being chased by bees"
+                #print(NewPosition.Description)
                 self.MapTiles[x][y] = NewPosition
 
-
+    def getDescription(self, x: int, y: int):
+        a: Position = self.MapTiles[x][y]
+        return a.getDescription()
 
     def getPosition(self, x: int, y: int):
         return self.MapTiles[x][y]
