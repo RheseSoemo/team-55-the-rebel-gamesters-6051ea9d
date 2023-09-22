@@ -52,12 +52,15 @@ class GameController:
 
     def move(self, direction: Direction) -> None:
         CanMove: bool
+        print(direction)
 
         if direction == Direction.NORTH:
             if self.CurrentMap.checkPosition(self.PositionX, self.PositionY + 1) == True:
+                #print("can move north")
                 CanMove = True
             else:
                 CanMove = False
+                #print("can't move north")
         elif direction == Direction.SOUTH:
             if self.CurrentMap.checkPosition(self.PositionX, self.PositionY - 1) == True:
                 CanMove = True

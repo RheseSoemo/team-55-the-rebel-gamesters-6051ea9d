@@ -7,15 +7,15 @@ class GameMap:
     MapTiles = [[0]*1]*1
 
     def __init__(self, number):
-        self.NumberOfPosition = number
-        rows, cols = (self.NumberOfPosition, self.NumberOfPosition)
+        self.BoardWidth = number
+        rows, cols = (self.BoardWidth, self.BoardWidth)
         #self.MapTiles = [[0]*cols]*rows
         self.MapTiles = [[0 for j in range(cols)] for i in range(rows)]
         #print("Successfully created Map")
         
 
-        for x in range (0, self.NumberOfPosition):
-            for y in range (0, self.NumberOfPosition):
+        for x in range (0, self.BoardWidth):
+            for y in range (0, self.BoardWidth):
                 #print(x, " ", y)
                 NewPosition: Position = Position(1)
                 self.MapTiles[x][y] = NewPosition
@@ -27,13 +27,17 @@ class GameMap:
 
     def checkPosition(self, x: int, y: int):
         ReturnState: bool = True
-        print(x, "|", y)
-        if not self.BoardWidth > x or -1 < x:
+        #print(self.BoardWidth)
+        #print(x, "|", y)
+        if self.BoardWidth-1 < x or 0 > x:
             ReturnState = False
+            #print("board x out of bounds")
 
-        if not self.BoardWidth > y or -1 < y:
+        if self.BoardWidth-1 < y or 0 > y:
             ReturnState = False
+            #print("board y out of bounds")
 
+        #print (ReturnState)
         return ReturnState
 
 
