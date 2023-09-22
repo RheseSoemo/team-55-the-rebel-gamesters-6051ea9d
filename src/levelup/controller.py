@@ -91,9 +91,9 @@ class GameController:
         if CanMove == True:
             self.PositionX = NewX
             self.PositionY = NewY
-            print("You move", FriendlyDirection, "to map tile X:", self.PositionX, " Y:", self.PositionY)
+            print("You move", FriendlyDirection, "to map tile X:", self.PositionX+1, "Y:", self.PositionY+1)
         else:
-            print("You cannot move", FriendlyDirection, "to map tile X:", NewX, " Y:", NewY)
+            print("You cannot move", FriendlyDirection, "to map tile X:", NewX+1, "Y:", NewY+1, ", so you stay on tile X:", self.PositionX+1, "Y:", self.PositionY+1)
 
     def set_character_position(self, xycoordinates: tuple) -> None:
         # TODO: IMPLEMENT THIS TO SET CHARACTERS CURRENT POSITION -- exists to be testable
