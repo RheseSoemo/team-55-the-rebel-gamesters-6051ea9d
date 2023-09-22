@@ -34,6 +34,7 @@ class GameController:
     CurrentMap: GameMap
     PositionX: int = 0
     PositionY: int = 0
+    MoveCount: int = 0
 
     def __init__(self):
         self.status = GameStatus()
@@ -55,6 +56,7 @@ class GameController:
         NewX: int = self.PositionX
         NewY: int = self.PositionY
         FriendlyDirection: str
+        self.MoveCount += 1
         #print(direction)
 
         if direction == Direction.NORTH:
@@ -96,6 +98,7 @@ class GameController:
         else:
             print("You cannot move", FriendlyDirection, "to map tile X:", NewX+1, "Y:", NewY+1, ", so you stay on tile X:", self.PositionX+1, "Y:", self.PositionY+1)
             print(self.CurrentMap.getPosition(self.PositionX, self.PositionY).Description)
+        print("You have moved", self.MoveCount, "times")
 
     def set_character_position(self, xycoordinates: tuple) -> None:
         # TODO: IMPLEMENT THIS TO SET CHARACTERS CURRENT POSITION -- exists to be testable
